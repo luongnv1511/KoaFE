@@ -1,0 +1,28 @@
+﻿<div class="card mt-4">
+    <button type="button" style="float: left;" class="btn btn-success" (click)="editTask()">Add task</button>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="tasks">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Task</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Funtions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let t of tasks; let i = index">
+                        <th>{{i+1}}</th>
+                        <td>{{t.taskname}}</td>
+                        <td>{{t.description}}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" style="width: 100px; margin-right: 20px;" (click)="editTask(t, t.id)">Edit</button>
+                            <button type=" button " class="btn btn-danger " style="width: 100px; " (click)="deleteTask(t.id)">Delete</button>
+                        </td>
+                </tbody>
+            </table>
+        </ul>
+    </div>
+</div>
