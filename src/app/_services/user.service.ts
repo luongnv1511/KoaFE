@@ -16,8 +16,8 @@ export class UserService {
           return task;
       }));
     }
-    delTaskById(userid: any) {
-      return this.http.post<any>(`${environment.apiUrl}/api/delete-task`, { userid })
+    delTaskById(id: any) {
+      return this.http.post<any>(`${environment.apiUrl}/api/delete-task`, { id })
       .pipe(map(task => {
           console.log(task);
           return task;

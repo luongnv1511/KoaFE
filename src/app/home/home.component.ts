@@ -35,7 +35,7 @@ export class HomeComponent {
     var r = confirm(`Delete task have id = ${id}!`);
     if (r === true) {
       this.userService.delTaskById(id).pipe(first()).subscribe(rs => {
-        console.log(rs);
+        this.ngOnInit() 
       });
     }
   }
